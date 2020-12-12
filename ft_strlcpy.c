@@ -1,0 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   strlcpy.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yfu <marvin@42.fr>                         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/12 11:24:05 by yfu               #+#    #+#             */
+/*   Updated: 2020/12/12 15:37:02 by yfu              ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+size_t			ft_strlcpy(char *dst, const char *src, size_t size)
+{
+	size_t	i;
+
+	i = -1;
+	if (!dst || !src)
+		return (0);
+	if (size == 0)
+		return (ft_strlen(src));
+	while (src[++i] && --size)
+		dst[i] = src[i];
+	dst[i] = '\0';
+	while (src[i])
+		i++;
+	return (i);
+}
