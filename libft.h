@@ -6,7 +6,7 @@
 /*   By: yfu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 11:22:42 by yfu               #+#    #+#             */
-/*   Updated: 2020/12/12 15:43:14 by yfu              ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 12:22:02 by yfu              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,6 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
-int				ft_isspace(int c);
-void			ft_sort(int *head, int *tail, int (*cmp)(int, int));
-int				ft_abs(int n);
 void			*ft_memset(void *pointer, int value, size_t count);
 void			ft_bzero(void *s, size_t n);
 void			*ft_memcpy(void *destination, const void *source, size_t size);

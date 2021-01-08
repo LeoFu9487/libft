@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   abs.c                                              :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yfu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/12 11:20:46 by yfu               #+#    #+#             */
-/*   Updated: 2020/12/12 11:20:51 by yfu              ###   ########lyon.fr   */
+/*   Created: 2020/12/22 12:44:33 by yfu               #+#    #+#             */
+/*   Updated: 2020/12/22 12:44:42 by yfu              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_abs(int n)
+void			ft_putnbr_fd(int n, int fd)
 {
-	if (n < 0)
-		return (-1 * n);
-	return (n);
+	if (fd < 0)
+		return ;
+	if (n == 0)
+	{
+		ft_putstr_fd("0", fd);
+		return ;
+	}
+	else if (n == -2147483648)
+	{
+		ft_putstr_fd("-2147483648", fd);
+		return ;
+	}
+	else if (n < 0)
+		ft_putchar_fd('-', fd);
+	n = n < 0 ? n * -1 : n;
+	if (n > 9)
+		ft_putnbr_fd(n / 10, fd);
+	ft_putchar_fd('0' + n % 10, fd);
 }

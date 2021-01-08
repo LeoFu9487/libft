@@ -6,7 +6,7 @@
 /*   By: yfu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 16:07:51 by yfu               #+#    #+#             */
-/*   Updated: 2020/12/12 17:06:37 by yfu              ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 12:42:46 by yfu              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char			*ft_strjoin(char const *s1, char const *s2)
 
 	l2 = ft_strlen(s1);
 	l = ft_strlen(s1) + ft_strlen(s2);
-	if (l < 0 || !(str = (char*)malloc((l + 1) * sizeof(char))) || !s1 || !s2)
+	if (!s1 || !s2 || l < 0 || !(str = (char*)malloc((l + 1) * sizeof(char))))
 		return (NULL);
 	ct = -1;
 	while (++ct < l)

@@ -6,13 +6,21 @@
 /*   By: yfu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:24:57 by yfu               #+#    #+#             */
-/*   Updated: 2020/12/12 15:47:52 by yfu              ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 12:49:25 by yfu              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+static int	ft_isspace(char c)
+{
+	if (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r'
+		|| c == ' ')
+		return (1);
+	return (0);
+}
+
+int			ft_atoi(const char *str)
 {
 	long long int	ct[3];
 
