@@ -34,7 +34,7 @@ ft_putstr_fd.c		ft_toupper.c
 BONUS_SRCS = ft_lstadd_back.c	ft_lstadd_front.c\
 ft_lstclear.c	ft_lstdelone.c	ft_lstiter.c \
 ft_lstlast.c	ft_lstmap.c		ft_lstnew.c \
-ft_lstsize.c
+ft_lstsize.c	ft_memory.c		ft_lstfind.c
 
 HEADER = libft.h
 
@@ -42,7 +42,7 @@ OBJECTS = $(SRCS:.c=.o)
 
 BONUS_OBJECTS = $(BONUS_SRCS:.c=.o)
 
-all : $(NAME)
+all : bonus
 
 bonus : $(OBJECTS) $(BONUS_OBJECTS)
 	ar rc $(NAME) $(OBJECTS) $(BONUS_OBJECTS)
@@ -53,7 +53,7 @@ $(NAME): $(OBJECTS)
 	ranlib $(NAME)
 
 %.o : %.c $(HEADER)
-	$(CC) $(FLAGS) -I $(HEADER) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 		rm -rf $(OBJECTS) $(BONUS_OBJECTS)

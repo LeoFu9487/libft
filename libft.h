@@ -22,6 +22,14 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+typedef enum	e_memory
+{
+	push,
+	pop,
+	clear
+}				t_memory;
+
+void			*ft_memory(size_t ec, size_t es, void *add, t_memory type);
 void			*ft_memset(void *pointer, int value, size_t count);
 void			ft_bzero(void *s, size_t n);
 void			*ft_memcpy(void *destination, const void *source, size_t size);
@@ -57,13 +65,14 @@ void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 t_list			*ft_lstnew(void *content);
-void			ft_lstadd_front(t_list **lst, t_list *new);
+int				ft_lstadd_front(t_list **lst, t_list *new);
 int				ft_lstsize(t_list *lst);
 t_list			*ft_lstlast(t_list *lst);
 void			ft_lstadd_back(t_list **lst, t_list *new);
-void			ft_lstdelone(t_list *lst, void (*del)(void *));
+void			ft_lstdelone(t_list **head, t_list *lst, void (*del)(void *));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
+t_list			*ft_lstfind(t_list *head, void	*target);
 t_list			*ft_lstmap(t_list *l, void *(*f)(void *), void (*d)(void *));
 
 #endif

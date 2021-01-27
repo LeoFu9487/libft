@@ -23,15 +23,15 @@ char			*ft_substr(char const *s, size_t start, size_t len)
 	size_t	l;
 	size_t	ct;
 
-	if (len < 0 || start >= ft_strlen(s))
+	if (start >= ft_strlen(s))
 	{
-		if (!(ans = (char*)malloc(1 * sizeof(char))))
+		if (!(ans = ft_memory(1, sizeof(char), 0, push)))
 			return (NULL);
 		ans[0] = '\0';
 		return (ans);
 	}
 	l = ft_min(ft_strlen(s) - start, len);
-	if (!s || !(ans = (char*)malloc((l + 1) * sizeof(char))))
+	if (!s || !(ans = ft_memory(l + 1, sizeof(char), 0, push)))
 		return (NULL);
 	ct = -1;
 	while (++ct < l)

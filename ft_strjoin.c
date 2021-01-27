@@ -21,7 +21,7 @@ char			*ft_strjoin(char const *s1, char const *s2)
 
 	l2 = ft_strlen(s1);
 	l = ft_strlen(s1) + ft_strlen(s2);
-	if (!s1 || !s2 || l < 0 || !(str = (char*)malloc((l + 1) * sizeof(char))))
+	if (!s1 || !s2 || l < 0 || !(str = ft_memory(l + 1, sizeof(char), 0, push)))
 		return (NULL);
 	ct = -1;
 	while (++ct < l)

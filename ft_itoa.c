@@ -36,7 +36,7 @@ char			*ft_itoa(int n)
 	if (n == 0)
 		return (ft_strdup("0"));
 	ct = ft_cnt(n);
-	if (!(ans = (char*)malloc((ct + 1) * sizeof(char))))
+	if (!(ans = ft_memory(ct + 1, sizeof(char), 0, push)))
 		return (NULL);
 	if (n < 0)
 		ans[0] = '-';

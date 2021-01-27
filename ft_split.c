@@ -46,8 +46,8 @@ static char		**ft_free(char **ans)
 
 	ct = -1;
 	while (ans[++ct])
-		free(ans[ct]);
-	free(ans);
+		ft_memory(0, 0, ans[ct], pop);
+	ft_memory(0, 0, ans, pop);
 	return (NULL);
 }
 
@@ -58,7 +58,7 @@ char			**ft_split(char const *s, char c)
 	int		ct[3];
 
 	sz = ft_cnt(s, c);
-	if (!s || !(ans = (char**)malloc((sz + 1) * sizeof(char*))))
+	if (!s || !(ans = ft_memory(sz + 1, sizeof(char*), 0, push)))
 		return (NULL);
 	ct[0] = 0;
 	ct[1] = 0;
