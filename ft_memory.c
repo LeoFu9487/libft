@@ -7,7 +7,7 @@
 ** ft_memory(0, 0, NULL, clear);
 */
 
-void	*ft_memory(size_t elem_cnt, size_t elem_size, void *add, t_memory type)
+void	*ft_memory(size_t elem_cnt, size_t elem_size, void *del, t_memory type)
 {
 	static t_list	*head;
 	void			*new_mem;
@@ -21,7 +21,7 @@ void	*ft_memory(size_t elem_cnt, size_t elem_size, void *add, t_memory type)
 		return (new_mem);
 	}
 	if (type == pop)
-		ft_lstdelone(&head, ft_lstfind(head, add), free);
+		ft_lstdelone(&head, ft_lstfind(head, del), free);
 	else
 		ft_lstclear(&head, free);
 	return (NULL);

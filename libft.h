@@ -29,7 +29,7 @@ typedef enum	e_memory
 	clear
 }				t_memory;
 
-void			*ft_memory(size_t ec, size_t es, void *add, t_memory type);
+void			*ft_memory(size_t ec, size_t es, void *del, t_memory type);
 void			*ft_memset(void *pointer, int value, size_t count);
 void			ft_bzero(void *s, size_t n);
 void			*ft_memcpy(void *destination, const void *source, size_t size);

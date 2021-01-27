@@ -42,24 +42,34 @@ OBJECTS = $(SRCS:.c=.o)
 
 BONUS_OBJECTS = $(BONUS_SRCS:.c=.o)
 
-all : bonus
+all : $(NAME)
 
 bonus : $(OBJECTS) $(BONUS_OBJECTS)
-	ar rc $(NAME) $(OBJECTS) $(BONUS_OBJECTS)
-	ranlib $(NAME)
+	@ar rc $(NAME) $(OBJECTS) $(BONUS_OBJECTS)
+	@ranlib $(NAME)
+	@echo "libft.a created / updated"
 
-$(NAME): $(OBJECTS)
-	ar rc $(NAME) $(OBJECTS)
-	ranlib $(NAME)
+$(NAME): $(OBJECTS) $(BONUS_OBJECTS)
+	@ar rc $(NAME) $(OBJECTS) $(BONUS_OBJECTS)
+	@ranlib $(NAME)
+	@echo "libft.a created / updated"
 
 %.o : %.c $(HEADER)
-	$(CC) $(FLAGS) -c $< -o $@
+	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-		rm -rf $(OBJECTS) $(BONUS_OBJECTS)
+		@rm -rf $(OBJECTS) $(BONUS_OBJECTS)
+		@echo "libft.a clean done"
 
-fclean: clean
-		rm -rf $(NAME)
+fclean: 
+		@rm -rf $(OBJECTS) $(BONUS_OBJECTS)
+		@rm -rf $(NAME)
+		@echo "libft.a fclean done"
+
 re: fclean all
+
+go :	$(NAME)
+	$(CC) -fsanitize=address main.c $(NAME) -o test
+	./test
 
 .PHONY : all bonus clean fclean re
