@@ -52,4 +52,4 @@ usage of ```ft_memory```(short version):
 
 ```ft_memory(0,0,NULL,clear)``` can free everything
 
-If there are any advices or questions, contact yfu@student.42lyon.fr
+If there are any advices or questions, please contact yfu@student.42lyon.fr
