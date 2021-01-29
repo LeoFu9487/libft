@@ -45,5 +45,9 @@ In the end of the project, just call ```ft_memory(0,0,0,clear)```. Then, every p
 usage of ```ft_memory```(short version): 
 
 ```int *num = ft_memory(5, sizeof(int), NULL, push)``` is just like ```int *num = malloc(5 * sizeof(int))```
+
+
 ```ft_memory(0,0,num,pop)``` is like ```free(num)```
+
+
 ```ft_memory(0,0,NULL,clear)``` can free everything
