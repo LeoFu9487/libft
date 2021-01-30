@@ -2,13 +2,19 @@
 
 This libft is slightly different form the 42 subject, I modified the prototype of ```ft_lstdelone()``` for the convenience of future usage.
 
-Bonus function which is not in subject :
+Bonus functions which are not in the subject :
+
+Function :
 
 ```t_list *ft_lstfind(t_list *head, void *target)```
 
-description and uage : 
+description and usage : 
 
-It will return the first element of which ```content == target```, if it doesn't exist, it will return ```NULL```
+It will return the first element of which ```content == target```, if we can't find ```target``` in the list , it will return ```NULL```
+
+
+
+Function :
 
 ```void *ft_memory(size_t elem_cnt, size_t elem_size, void *del, t_memory type)```
 
