@@ -2,27 +2,27 @@
 
 This libft is slightly different form the 42 subject, I modified the prototype of ```ft_lstdelone()``` for the convenience of future usage.
 
-Bonus functions which are not in the subject :
+## Bonus functions which are not in the subject :
 
-Function :
+#### Function :
 
 ```t_list *ft_lstfind(t_list *head, void *target)```
 
-description and usage : 
+#### description and usage : 
 
 It will return the first element of which ```content == target```, if we can't find ```target``` in the list , it will return ```NULL```
 
 
 
-Function :
+#### Function :
 
 ```void *ft_memory(size_t elem_cnt, size_t elem_size, void *del, t_memory type)```
 
-description : 
+#### description : 
 
 Use this function instead of ```malloc``` and ```free```, then the program will be LEAKS-FREE
 
-usage : (short version is below)
+#### usage : (short version is below)
 
 There are three modes for ```t_memory```, which is ```push```, ```pop```, and ```clear```
 
@@ -48,7 +48,13 @@ In the end of the project, just call ```ft_memory(0,0,0,clear)```. Then, every p
 
 
 
-usage of ```ft_memory```(short version): 
+
+
+
+
+
+
+#### usage of ```ft_memory```(short version): 
 
 ```int *num = ft_memory(5, sizeof(int), NULL, push)``` is just like ```int *num = malloc(5 * sizeof(int))```
 
