@@ -40,7 +40,7 @@ static int		ft_sub(char **ans, const char *s, int *ct)
 	return (1);
 }
 
-static char		**ft_free(char **ans)
+static char		**ft_free_sub(char **ans)
 {
 	int	ct;
 
@@ -74,7 +74,7 @@ char			**ft_split(char const *s, char c)
 		}
 		if (ct[2] > 0)
 			if (!ft_sub(ans, s, (int*)ct))
-				return (ft_free(ans));
+				return (ft_free_sub(ans));
 	}
 	ans[ct[1]] = NULL;
 	return (ans);

@@ -29,6 +29,9 @@ typedef enum	e_memory
 	clear
 }				t_memory;
 
+void			*ft_malloc(size_t elem_cnt, size_t elem_size);
+void			ft_free(void *del);
+void			ft_free_all(void);
 void			*ft_memory(size_t ec, size_t es, void *add, t_memory type);
 void			*ft_memset(void *pointer, int value, size_t count);
 void			ft_bzero(void *s, size_t n);

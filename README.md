@@ -8,9 +8,21 @@ This libft is slightly different form the 42 subject, I modified the prototype o
 
 ```t_list *ft_lstfind(t_list *head, void *target)```
 
-#### description and usage : 
+#### Description and Usage : 
 
 It will return the first element of which ```content == target```, if we can't find ```target``` in the list , it will return ```NULL```
+
+#### Function :
+
+```void	*ft_malloc(size_t elem_cnt, size_t elem_size)```
+
+```void	ft_free(void *del)```
+
+```void ft_free_all(void)```
+
+#### Description :
+
+Just use ```ft_malloc``` like normal ```malloc```, and ```ft_free``` like normal ```free```. At the end of the program, call ```ft_free_all``` can free every memory and prevent leaks.
 
 
 
