@@ -6,17 +6,17 @@
 /*   By: yfu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 11:43:22 by yfu               #+#    #+#             */
-/*   Updated: 2020/12/22 11:43:26 by yfu              ###   ########lyon.fr   */
+/*   Updated: 2021/05/04 23:00:06 by yfu              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_lstdelone(t_list **head, t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_list **head, t_list *lst, void (*del)(void *))
 {
 	t_list	*temp;
 
-	if (!lst)
+	if (!lst || !head)
 		return ;
 	temp = *head;
 	if (temp == lst)
@@ -34,5 +34,5 @@ void			ft_lstdelone(t_list **head, t_list *lst, void (*del)(void *))
 	}
 	if (del)
 		del(lst->content);
-	free(lst);
+	ft_free(lst);
 }

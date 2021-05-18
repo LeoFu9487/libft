@@ -6,13 +6,13 @@
 /*   By: yfu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 08:19:59 by yfu               #+#    #+#             */
-/*   Updated: 2021/01/29 08:19:59 by yfu              ###   ########lyon.fr   */
+/*   Updated: 2021/05/04 22:00:43 by yfu              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list			*ft_lstfind(t_list *head, void *target)
+t_list	*ft_lstfind(t_list *head, void *target)
 {
 	while (head)
 	{

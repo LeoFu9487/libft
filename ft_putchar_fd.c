@@ -6,13 +6,13 @@
 /*   By: yfu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 12:44:23 by yfu               #+#    #+#             */
-/*   Updated: 2020/12/22 12:44:28 by yfu              ###   ########lyon.fr   */
+/*   Updated: 2021/05/04 18:56:07 by yfu              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	if (fd > 0)
 		write(fd, &c, 1);

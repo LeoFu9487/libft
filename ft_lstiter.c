@@ -6,13 +6,13 @@
 /*   By: yfu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 11:43:27 by yfu               #+#    #+#             */
-/*   Updated: 2020/12/22 11:43:31 by yfu              ###   ########lyon.fr   */
+/*   Updated: 2021/05/04 19:45:14 by yfu              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!f)
 		return ;

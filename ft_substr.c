@@ -6,18 +6,13 @@
 /*   By: yfu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 13:00:51 by yfu               #+#    #+#             */
-/*   Updated: 2020/12/22 13:00:56 by yfu              ###   ########lyon.fr   */
+/*   Updated: 2021/05/04 21:59:26 by yfu              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_min(size_t a, size_t b)
-{
-	return ((a < b) ? a : b);
-}
-
-char			*ft_substr(char const *s, size_t start, size_t len)
+char	*ft_substr(char const *s, size_t start, size_t len)
 {
 	char	*ans;
 	size_t	l;
@@ -25,13 +20,14 @@ char			*ft_substr(char const *s, size_t start, size_t len)
 
 	if (start >= ft_strlen(s))
 	{
-		if (!(ans = ft_memory(1, sizeof(char), 0, push)))
-			return (NULL);
-		ans[0] = '\0';
+		ans = ft_calloc(1, sizeof(char));
 		return (ans);
 	}
-	l = ft_min(ft_strlen(s) - start, len);
-	if (!s || !(ans = ft_memory(l + 1, sizeof(char), 0, push)))
+	l = (size_t)ft_min((int)(ft_strlen(s) - start), (int)len);
+	if (!s)
+		return (NULL);
+	ans = ft_calloc(l + 1, sizeof(char));
+	if (!ans)
 		return (NULL);
 	ct = -1;
 	while (++ct < l)

@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yfu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/22 12:36:19 by yfu               #+#    #+#             */
-/*   Updated: 2021/05/04 19:48:03 by yfu              ###   ########lyon.fr   */
+/*   Created: 2021/04/04 11:58:49 by yfu               #+#    #+#             */
+/*   Updated: 2021/05/04 18:55:57 by yfu              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+int	ft_sqrt(int n)
 {
-	size_t	i;
+	long long	lb;
+	long long	ub;
+	long long	mid;
 
-	i = -1;
-	if (!dst || !src)
-		return (0);
-	if (size == 0)
-		return (ft_strlen(src));
-	while (src[++i] && --size)
-		dst[i] = src[i];
-	dst[i] = '\0';
-	while (src[i])
-		i++;
-	return (i);
+	if (n <= 1LL)
+		return (n);
+	lb = 0LL;
+	ub = (long long)n;
+	while (ub - lb > 1LL)
+	{
+		mid = (lb + ub) / 2LL;
+		if (mid * mid <= (long long)n)
+			lb = mid;
+		else
+			ub = mid;
+	}
+	return ((int)lb);
 }

@@ -6,7 +6,7 @@
 /*   By: yfu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 11:43:38 by yfu               #+#    #+#             */
-/*   Updated: 2020/12/22 11:43:42 by yfu              ###   ########lyon.fr   */
+/*   Updated: 2021/05/04 23:36:00 by yfu              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	ans = NULL;
 	while (lst)
 	{
-		if (!(new = ft_lstnew(f(lst->content))))
+		new = ft_lstnew(f(lst->content));
+		if (!new)
 		{
 			ft_lstclear(&ans, del);
 			return (NULL);

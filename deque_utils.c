@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   deque_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yfu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/22 12:36:19 by yfu               #+#    #+#             */
-/*   Updated: 2021/05/04 19:48:03 by yfu              ###   ########lyon.fr   */
+/*   Created: 2021/03/13 21:58:29 by yfu               #+#    #+#             */
+/*   Updated: 2021/05/04 19:49:04 by yfu              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+t_double_list	*double_list_init(void *ptr)
 {
-	size_t	i;
+	t_double_list	*double_list;
 
-	i = -1;
-	if (!dst || !src)
-		return (0);
-	if (size == 0)
-		return (ft_strlen(src));
-	while (src[++i] && --size)
-		dst[i] = src[i];
-	dst[i] = '\0';
-	while (src[i])
-		i++;
-	return (i);
+	double_list = ft_malloc(1, sizeof(t_double_list));
+	if (!double_list)
+		return (NULL);
+	double_list->content = ptr;
+	double_list->next = NULL;
+	double_list->last = NULL;
+	return (double_list);
+}
+
+void	deque_clear(t_deque *deque, void (*f)(void*))
+{
+	while (deque->size)
+		deque_pop_back(deque, f);
 }

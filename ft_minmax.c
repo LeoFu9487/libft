@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_minmax.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yfu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/22 12:36:19 by yfu               #+#    #+#             */
-/*   Updated: 2021/05/04 19:48:03 by yfu              ###   ########lyon.fr   */
+/*   Created: 2021/03/09 00:04:57 by yfu               #+#    #+#             */
+/*   Updated: 2021/05/04 22:02:15 by yfu              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+int	ft_min(int a, int b)
 {
-	size_t	i;
+	if (a < b)
+		return (a);
+	return (b);
+}
 
-	i = -1;
-	if (!dst || !src)
-		return (0);
-	if (size == 0)
-		return (ft_strlen(src));
-	while (src[++i] && --size)
-		dst[i] = src[i];
-	dst[i] = '\0';
-	while (src[i])
-		i++;
-	return (i);
+int	ft_max(int a, int b)
+{
+	if (a > b)
+		return (a);
+	return (b);
 }

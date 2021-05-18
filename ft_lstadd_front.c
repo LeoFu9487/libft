@@ -6,17 +6,17 @@
 /*   By: yfu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 11:34:30 by yfu               #+#    #+#             */
-/*   Updated: 2020/12/22 11:43:15 by yfu              ###   ########lyon.fr   */
+/*   Updated: 2021/05/04 23:00:21 by yfu              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_lstadd_front(t_list **lst, t_list *new)
+int	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!new || !lst)
 	{
-		ft_putstr_fd("ERROR_IN_FT_LSRADD_FRONT\n", 1);
+		ft_putstr_fd("ERROR_IN_FT_LSTADD_FRONT\n", 1);
 		return (0);
 	}
 	if (!*lst)

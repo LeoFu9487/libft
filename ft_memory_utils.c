@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memory_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yfu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/22 12:36:19 by yfu               #+#    #+#             */
-/*   Updated: 2021/05/04 19:48:03 by yfu              ###   ########lyon.fr   */
+/*   Created: 2021/03/09 00:04:33 by yfu               #+#    #+#             */
+/*   Updated: 2021/05/04 23:37:35 by yfu              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+void	*ft_malloc(size_t elem_cnt, size_t elem_size)
 {
-	size_t	i;
+	return (ft_memory(elem_cnt, elem_size, NULL, push));
+}
 
-	i = -1;
-	if (!dst || !src)
-		return (0);
-	if (size == 0)
-		return (ft_strlen(src));
-	while (src[++i] && --size)
-		dst[i] = src[i];
-	dst[i] = '\0';
-	while (src[i])
-		i++;
-	return (i);
+void	ft_free(void *del)
+{
+	ft_memory(0U, 0U, del, pop);
+}
+
+void	ft_free_all(void)
+{
+	ft_memory(0U, 0U, NULL, clear);
 }

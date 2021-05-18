@@ -6,7 +6,7 @@
 /*   By: yfu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 11:22:42 by yfu               #+#    #+#             */
-/*   Updated: 2020/12/22 12:22:02 by yfu              ###   ########lyon.fr   */
+/*   Updated: 2021/05/04 19:49:39 by yfu              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,43 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>
+# include "get_next_line.h"
 
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }				t_list;
 
-typedef enum	e_memory
+typedef struct s_double_list
+{
+	void					*content;
+	struct s_double_list	*next;
+	struct s_double_list	*last;
+}				t_double_list;
+
+typedef struct s_deque
+{
+	struct s_double_list	*head;
+	struct s_double_list	*tail;
+	int						size;
+}				t_deque;
+
+typedef enum e_memory
 {
 	push,
 	pop,
 	clear
 }				t_memory;
 
+void			ft_sort(int *head, int *tail, int (*cmp)(int, int));
+void			deque_clear(t_deque *deque, void (*f)(void*));
+t_double_list	*double_list_init(void *ptr);
+void			deque_push_back(t_deque *deque, void *ptr);
+void			deque_push_front(t_deque *deque, void *ptr);
+void			deque_pop_back(t_deque *deque, void (*f)(void*));
+void			deque_pop_front(t_deque *deque, void (*f)(void*));
+t_deque			*deque_init(void);
 void			*ft_malloc(size_t elem_cnt, size_t elem_size);
 void			ft_free(void *del);
 void			ft_free_all(void);
@@ -45,7 +68,7 @@ char			*ft_strchr(const char *string, int searchedchar);
 char			*ft_strrchr(const char *string, int searchedchar);
 char			*ft_strnstr(const char *s1, const char *s2, size_t len);
 int				ft_strncmp(const char *f, const char *s, size_t len);
-int				ft_atoi(const char *thestring);
+int				ft_atoi(char *str);
 int				ft_isalpha(int character);
 int				ft_isdigit(int character);
 int				ft_isalnum(int character);
@@ -56,6 +79,7 @@ int				ft_tolower(int character);
 void			*ft_calloc(size_t elementcount, size_t elementsize);
 char			*ft_strdup(const char *source);
 size_t			ft_strlcat(char *s1, const char *s2, size_t n);
+void			ft_strcat(char *s1, char *s2);
 size_t			ft_strlen(const char *s);
 char			*ft_substr(char const *s, size_t start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
@@ -77,5 +101,12 @@ void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstfind(t_list *head, void	*target);
 t_list			*ft_lstmap(t_list *l, void *(*f)(void *), void (*d)(void *));
+int				ft_min(int a, int b);
+int				ft_max(int a, int b);
+int				ft_isspace(char c);
+int				ft_ascending(int a, int b);
+int				ft_descending(int a, int b);
+int				binary_search(int *arr, int arr_size, int target);
+int				ft_sqrt(int n);
 
 #endif

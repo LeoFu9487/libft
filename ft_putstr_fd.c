@@ -6,13 +6,13 @@
 /*   By: yfu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 12:44:43 by yfu               #+#    #+#             */
-/*   Updated: 2020/12/22 12:44:48 by yfu              ###   ########lyon.fr   */
+/*   Updated: 2021/05/04 22:00:54 by yfu              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s || *s == '\0' || fd < 0)
 		return ;
