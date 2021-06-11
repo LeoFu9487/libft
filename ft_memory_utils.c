@@ -6,7 +6,7 @@
 /*   By: yfu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 00:04:33 by yfu               #+#    #+#             */
-/*   Updated: 2021/05/04 23:37:35 by yfu              ###   ########lyon.fr   */
+/*   Updated: 2021/05/17 01:48:42 by yfu              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	ft_free(void *del)
 
 void	ft_free_all(void)
 {
-	ft_memory(0U, 0U, NULL, clear);
+	ft_memory(0U, 0U, NULL, clean);
 }
